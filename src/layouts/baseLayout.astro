@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
-const {title = "Dennis Pater"} = Astro.props;
-import NavigationMenu from "../components/NavigationMenu.astro";
+const {pageTitle = "Dennis Pater"} = Astro.props;
+import Navigation from "../components/Navigation.astro";
+import Hamburger from "../components/Hamburger.astro";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +11,12 @@ import NavigationMenu from "../components/NavigationMenu.astro";
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
 </head>
 <body>
 <header>
-   <NavigationMenu />
+    <Hamburger />
+    <Navigation />
 </header>
 <main>    
     <slot />
@@ -22,4 +24,7 @@ import NavigationMenu from "../components/NavigationMenu.astro";
 </body>
 <footer>
 </footer>
+<script>
+    import "../scripts/menu.js";
+</script>
 </html>

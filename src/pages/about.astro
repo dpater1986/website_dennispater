@@ -2,7 +2,15 @@
 
 import BaseLayout from "../layouts/baseLayout.astro";
 
+const happy = true;
+const finished = false;
+const goal = 2;
 ---
-<BaseLayout title="Over mij">
+<BaseLayout pageTitle="Over mij">
 <p >test</p>
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 2 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 </BaseLayout>
