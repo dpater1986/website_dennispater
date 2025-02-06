@@ -1,30 +1,25 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const {pageTitle = "Dennis Pater"} = Astro.props;
-import Navigation from "../components/Navigation.astro";
-import Hamburger from "../components/Hamburger.astro";
+const { pageTitle } = Astro.props;
 ---
-<!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-</head>
-<body>
-<header>
-    <Hamburger />
-    <Navigation />
-</header>
-<main>    
+  </head>
+  <body>
+    <Header />
+    <h1>{pageTitle}</h1>
     <slot />
-</main>
-</body>
-<footer>
-</footer>
-<script>
-    import "../scripts/menu.js";
-</script>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
 </html>
